@@ -1,0 +1,344 @@
+:root{
+    --primary-color: #e50914;
+    --dark-color: #141414;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, serif;
+    --webkit-font-smoothing: antialiased;
+    background: #000;
+    color: #999;
+}
+
+ul{
+    list-style: none;
+}
+
+h1, h2, h3, h4{
+    color: #fff;
+}
+
+a{
+    color: #fff;
+    text-decoration: none ;
+}
+
+p{
+    margin: 8px 0;
+}
+
+img{
+    width: 100%;
+}
+
+
+.showcase {
+    width: 100%;
+    height: 93vh;/*vh = viewport height*/
+    position: relative;
+    background: url(../images/th.jpg) no-repeat center center/cover;
+    
+}
+.showcase::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: inset 100px 90px 200px #000000, inset -100px -90px 200px #000000;
+}
+
+.showcaseTop{
+    position: relative;
+    height: 80px; 
+    z-index: 2;   
+}
+.showcaseTop img{
+    width: 120px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.showcaseTop a{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%,-50%);
+}
+.showcaseContent{
+    position: relative;
+    margin: auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 9rem;
+    z-index: 2;
+}
+.showcaseContent h1{
+    font-weight: 700;
+    font-size: 5rem;
+    line-height: 1.1rem;
+    margin: 0 0 2rem;
+}
+.showcaseContent p{
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.9rem;
+    line-height: 1.25;
+    margin: 0 0 2rem;
+}
+
+/* tabs */
+.tab{
+    background: var(--dark-color);
+    padding-top: 1rem;
+    border-bottom: 3px solid #3d3d3d;
+}
+
+/* hide content initially */
+#tab-1-content, #tab-2-content, #tab-3-content{
+    display: none;
+}
+.show{
+    display: block !important;
+}
+.tab .container{
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.tab p{
+    font-size: 1rem;
+    padding-top: 0.5rem;
+}
+.tab .container > div{
+    padding: 1rem 0;
+}
+.tab .container > div:hover{
+    color: #fff;
+    cursor: pointer;
+}
+.tabBorder{
+    border-bottom: var(--primary-color) 4px solid;
+}
+
+/* tab content */
+.tabContent{
+    padding: 3rem 0;
+    background: #000;
+    color: #fff;
+}
+#tab-1-content .tab-1-content-inner{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#tab-2-content .tab-2-content-top{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+#tab-2-content .tab-2-content-bottom{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.table{
+    max-width: 80%;
+    margin-top: 2rem;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.table thead th{
+    text-transform: uppercase;
+    padding: 0.4rem;
+}
+.table tbody tr td{
+    color: #999;
+    padding: 0.1rem;
+    text-align: center;
+}
+.table tbody tr td:first-child{
+    text-align: left;
+}
+.table tbody tr:nth-child(odd){
+    background: #222;
+}
+
+/* footer */
+.footer{
+    max-width: 70%;
+    margin: 1rem auto;
+    overflow: auto;
+}
+.footer, .footer a{
+    color: #999;
+    font-size: 0.8rem;
+}
+.footer p{
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+}
+.footer .footerCols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+}
+.footer li{
+    line-height: 3;
+}
+
+/* container */
+.container{
+    max-width: 70%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+/* text */
+.textXl{
+    font-size: 2rem;
+    margin-bottom: 1 rem;
+}
+.textLg{
+    font-size: 1.3rem;
+    margin-bottom: 1 rem;
+}
+.textMed{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+.textDark{
+    color: #999;
+}
+.textCenter{
+    text-align: center;
+}
+
+/*Buttons*/
+.btn{
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.4rem 1.3rem;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    outline: none;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+    border-radius: 2px;
+}
+.btn hover{
+    opacity: 0.9;
+}
+.btnRounded{
+    border-radius: 5px;
+}
+.btn-xl{
+    font-size: 2rem;
+    padding: 1.5rem 2.1 rem;
+    text-transform: uppercase;
+}
+
+/* media */
+@media(max-width: 920px){
+    .showcase{
+        height: 80vh;
+    }
+    .hide-sm{
+        display: none;
+    }
+    .showcaseTop img{
+        top: 30%;
+        left: 5%;
+        transform: translate(0);
+    }
+    .showcaseContent h1{
+        font-size: 3.7rem;
+        line-height: 0.2;
+    }
+    .showcaseContent p{
+        font-size: 1.5rem;
+    }
+    
+    .footer .footerCols{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .btn-xl{
+        font-size: 1.5rem;
+        padding: 0.7rem 1rem;
+    }
+    .table{
+        max-width: 50%;
+        margin: auto;
+    }
+
+    .textXl{
+        font-size: 1.5rem;
+    }
+    .textLg{
+        font-size: 1.3rem;
+    }
+    .textMed{
+        font-size: 1rem;
+    }
+}
+
+@media(max-width: 700px){
+    .showcase::after{
+        box-shadow: inset 60px 80px 200px #000000, inset -70px -80px 200px #000000;
+    }
+    #tab-1-content .tab-1-content-inner{
+        grid-template-columns: 1fr;
+        
+    }
+    #tab-2-content .tab-2-content-top{
+        grid-template-columns: 1fr;
+    }
+    #tab-2-content .tab-2-content-bottom{
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+        text-align: center;
+    }
+    .table{
+        max-width: 50%;
+        margin: auto;
+        padding: auto;
+    }
+    .tab .container{
+        display: flex;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 3rem;
+    }
+    
+}
